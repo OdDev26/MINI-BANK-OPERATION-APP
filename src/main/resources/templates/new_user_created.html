@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<!--<a  th:href="@{/}" class="btn btn-success">Attendance Sheet</a>-->
+<table border="1" cellpadding="10">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Phone Number</th>
+        <th>User Name</th>
+        <th>Status</th>
+        <th>Approve</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="applicant : ${applicantList}">
+        <td th:text="${applicant.firstName}">First Name</td>
+        <td th:text="${applicant.middleName}">Last Name</td>
+        <td th:text="${applicant.lastName}">Email Address</td>
+        <td th:text="${applicant.clientAddress}">Role</td>
+        <td th:text="${applicant.clientEmailAddress}">Portfolio</td>
+        <td th:text="${applicant.password}">Portfolio</td>
+        <td th:text="${applicant.phoneNumber}">Portfolio</td>
+        <td th:text="${applicant.username}">Portfolio</td>
+        <td th:text="${applicant.status}">Portfolio</td>
+        <td><a th:href="@{/grantClient/{id} (id = ${applicant.clientID})}">Approved</a></td>
+        <!--        <td><a th:href="@{/rejectLeave/{id} (id = ${leave.leaveID})}">Declined</a></td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
