@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/saveNewClient}" th:object="${client}" method="post">
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input th:type="text" th:field="*{firstName}"  class="form-control" id="firstName" placeholder="first Name">
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Middle Name</label>
+        <input th:type="text" th:field="*{middleName}" class="form-control" id="lastName" placeholder="Middle Name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Last Name</label>
+        <input th:type="text" th:field="*{lastName}" class="form-control" id="email" placeholder="Enter your Last Name">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Enter your phone number</label>
+        <input type="number" th:field="*{phoneNumber}" class="form-control" id="password" placeholder="Phone Number">
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">Email</label>
+        <input th:type="email" th:field="*{clientEmailAddress}" class="form-control" id="role" placeholder="Email Address">
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">Enter your address</label>
+        <input th:type="text" th:field="*{clientAddress}" class="form-control"  placeholder="Address">
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">Input a username</label>
+        <input th:type="text" th:field="*{username}" class="form-control"  placeholder="Username">
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">Enter your preferred password</label>
+        <input th:type="password" th:field="*{password}" class="form-control"  placeholder="Password">
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="form-control btn btn-success" id="submit" value="Save new employee">
+    </div>
+</form>
+
+</body>
+</html>
