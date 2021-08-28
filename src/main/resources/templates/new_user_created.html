@@ -21,6 +21,7 @@
         <th>Status</th>
         <th>Approve</th>
     </tr>
+
     </thead>
     <tbody>
     <tr th:each="applicant : ${applicantList}">
@@ -34,7 +35,9 @@
         <td th:text="${applicant.username}">Portfolio</td>
         <td th:text="${applicant.status}">Portfolio</td>
         <td><a th:href="@{/grantClient/{id} (id = ${applicant.clientID})}">Approved</a></td>
-        <!--        <td><a th:href="@{/rejectLeave/{id} (id = ${leave.leaveID})}">Declined</a></td>-->
+<!--        <td><a th:href="@{/rejectLeave/{id} (id = ${applicant.clientID})}">Declined</a></td>-->
+        <td><a th:href="@{/saveAccount}">Save Account</a></td>
+
     </tr>
     </tbody>
 </table>

@@ -10,7 +10,7 @@ public class WithdrawalTransaction extends Transaction{
         super();
     }
 
-    public WithdrawalTransaction(Date transactionDate, Long amount, Account account) {
+    public WithdrawalTransaction(Date transactionDate, double amount, Account account) {
         super(transactionDate, amount, account);
     }
 }

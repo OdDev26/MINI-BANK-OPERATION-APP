@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/login}" th:object="${employeeLogin}" method="post">
+    <div class="mb-3">
+        <label path="email" >Email</label>
+        <input th:type="email"  name="email" placeholder="Email Address" class="form-control" id="exampleInputEmail1"/><br>
+    </div>
+    <div class="mb-3">
+        <label path="password">Password</label>
+        <input th:type="password" name="password" placeholder="password" class="form-control" id="exampleInputPassword"/>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Login" />
+</form>
+</body>
+</html>

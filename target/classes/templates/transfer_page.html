@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'/>
+    <link rel="stylesheet" type="text/css" th:src="@{/css/style2.css}" href="../../static/css/style2.css"/>
+    <link rel="stylesheet" type="text/css" th:src="@{/css/style3.css}" href="../../static/css/style3.css"/>
+    <title>Search</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+<div class="main main-agileits">
+    <div class="main-agilerow">
+        <div class="signup-wthreetop">
+            <h2>Transfer</h2>
+        </div>
+        <div class="contact-wthree">
+            <form th:action="@{/transfer}" method="post">
+                <div class="form-w3step1" th:each="account:${accountList}">>
+                    <label>Source Account</label><br>
+                    <input type="checkbox"  placeholder="Account Number" name="account_number" required="required" th:value="${account.accountNumber}" th:text="${account.accountNumber}"/>
+                    <br/>
+                    <label>Recipient's Account</label><br>
+                    <input type="number"  placeholder="Account Number" name="recipient_account_number" required="required"/>
+                    <br/>
+                    <label>Amount</label><br>
+                    <input type="text" placeholder="Amount" name="transactionAmount" required="required"/>
+                    <br>
+                </div>
+                <button type="submit" >
+                    Make Transfer
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

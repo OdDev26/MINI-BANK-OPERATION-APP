@@ -39,6 +39,19 @@
         <input th:type="password" th:field="*{password}" class="form-control"  placeholder="Password">
     </div>
     <div class="mb-3">
+
+        <label>
+            <select th:field="*{accountType} ">
+                <option value="" selected disabled></option>
+                <option th:each="accountTypes: ${T(com.example.newwork.enums.AccountType).values()}" th:value="${accountTypes}" th:text="${accountTypes}"></option>
+<!--                <option th:value="Current" th:text="*{accountType.CURRENT}">Current</option>-->
+<!--                <option th:value="Fixed" th:text="*{accountType.FIXED}">Fixed</option>-->
+<!--                <option th:value="savings" th:text="*{accountType.SAVINGS}">Savings</option>-->
+            </select>
+        </label>
+        <!--        <input th:type="password" th:field="*{password}" class="form-control"  placeholder="Password">-->
+    </div>
+    <div class="mb-3">
         <input type="submit" class="form-control btn btn-success" id="submit" value="Save new employee">
     </div>
 </form>

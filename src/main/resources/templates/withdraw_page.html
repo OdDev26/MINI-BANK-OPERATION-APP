@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/withdraw}" method="post">
+
+    <div th:each="account:${accountList}">
+        <label>Your Account Number
+            <input type="checkbox" name="account_number" th:value="${account.accountNumber}"  placeholder="password" class="form-control" th:text="${account.accountNumber}"/>
+        </label>
+    </div>
+    <label>Enter Amount
+        <input type="number" name="transactionAmount" placeholder="password" class="form-control"/>
+    </label>
+
+
+
+    <button class="btn btn-primary" type="submit">
+        Make A Withdraw
+    </button>
+
+</form>
+</body>
+</html>
