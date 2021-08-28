@@ -19,7 +19,6 @@ public class Transaction {
     @Enumerated(value = EnumType.STRING)
     private TransactionType transactionType;
 @ManyToOne
-@NotNull
 @JoinColumn(name = "account_id")
     private Account account;
 
@@ -27,7 +26,7 @@ public class Transaction {
         super();
     }
 
-    public Transaction(Date transactionDate, Long amount, Account account) {
+    public Transaction(Date transactionDate, double amount, Account account) {
         super();
         this.transactionDate = transactionDate;
         this.amount = amount;

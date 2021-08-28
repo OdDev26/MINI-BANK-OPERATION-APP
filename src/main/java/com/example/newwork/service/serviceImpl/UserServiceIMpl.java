@@ -7,6 +7,9 @@ import com.example.newwork.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UserServiceIMpl implements UserService {
     @Autowired
@@ -16,5 +19,11 @@ public class UserServiceIMpl implements UserService {
     @Override
     public void createNewUser(User user) {
         repository.save(user);
+    }
+
+
+    @Override
+    public User getUserByEmailAndPassword(String email, String password) {
+        return repository.findUserByUserEmailAndUserPassword(email, password);
     }
 }

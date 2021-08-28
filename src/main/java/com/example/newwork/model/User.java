@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -24,11 +25,11 @@ public class User {
     @Column(name = "user_password", nullable = false)
     private String userPassword;
     private String userPhoneNumber;
-    @Column(name = "user_account_number", nullable = true)
-    private String AccountNumber;
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
     @Enumerated(EnumType.STRING)
     private ClientStatus status;
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private Collection<Account>  accounts;
 
 }

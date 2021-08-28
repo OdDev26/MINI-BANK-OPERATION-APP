@@ -9,7 +9,7 @@ public class PaymentTransaction extends Transaction {
     public PaymentTransaction() {
         super();
     }
-    public PaymentTransaction(Date transactionDate, Long amount, Account account) {
+    public PaymentTransaction(Date transactionDate, double amount, Account account) {
         super(transactionDate, amount, account);
     }
 }
